@@ -3,5 +3,6 @@
   publish = "build"
 
 [build.environment]
+  CI = "false"
   NPM_FLAGS = "--legacy-peer-deps"
   NETLIFY_USE_NPM_FLAGS = "true"

@@ -8,7 +8,7 @@ const Products = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
-  let componentMounted = true;
+  const componentMounted = useRef(true);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -21,7 +21,7 @@ const Products = () => {
       }
 
       return () => {
-        componentMounted = false;
+        componentMounted.current = false;
       };
     };
 
